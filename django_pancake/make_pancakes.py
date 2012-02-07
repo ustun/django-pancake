@@ -1,4 +1,5 @@
-from flatten import flatten, TemplateDirectory
+#!/usr/bin/env python
+from django_pancake.flatten import flatten, TemplateDirectory
 import os
 
 def template_names(input_dir, prefix=''):
@@ -26,4 +27,7 @@ def make_pancakes(input_dir, output_dir):
 
 if __name__ == "__main__":
     import sys
+    if len(sys.argv[1:]) != 2:
+        print >> sys.stderr, 'Usage: %s source_dir target_dir' % sys.argv[0]
+        raise SystemExit(1)
     make_pancakes(sys.argv[1], sys.argv[2])

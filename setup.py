@@ -16,4 +16,5 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
     ],
     packages=['django_pancake'],
+    scripts=['django_pancake/make_pancakes.py'],
 )
